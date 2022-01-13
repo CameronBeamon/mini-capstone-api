@@ -7,6 +7,16 @@ class ProductsController < ApplicationController
     render json: Product.all
   end
 
+  def create
+    new_product = Product.new(
+      name: params["name"],
+      price: params["price"],
+      description: params["description"],
+    )
+    new_product.save
+    render json: new_product.as_json
+  end
+
   # def show_first
   #   render json: Product.first
   # end

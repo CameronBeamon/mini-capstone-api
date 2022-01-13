@@ -1,0 +1,12 @@
+### create method
+post http://localhost:3000/all_products
+Content-Type: application/json
+
+{
+  "name": "Samsung",
+  "price": "1232314",
+  "description": "decent"
+}
+
+### choose specific one
+post  http://localhost:3000/all_products/id=4
