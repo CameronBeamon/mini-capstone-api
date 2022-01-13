@@ -1,0 +1,2 @@
+###querery request
+post http://localhost:3000/all_products/id=2
