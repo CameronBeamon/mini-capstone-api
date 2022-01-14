@@ -1,4 +1,4 @@
-### create method
+### create 
 post http://localhost:3000/all_products
 Content-Type: application/json
 
@@ -8,5 +8,20 @@ Content-Type: application/json
   "description": "decent"
 }
 
-### choose specific one
-post  http://localhost:3000/all_products/id=4
+### index
+GET  http://localhost:3000/all_products
+
+
+### read
+post  http://localhost:3000/all_products/4
+
+### update
+PATCH http://localhost:3000/all_products/4
+Content-Type: application/json
+
+{
+   "price": "43243"
+}
+
+### delete
+DELETE   http://localhost:3000/all_products/id=3
