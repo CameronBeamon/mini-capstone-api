@@ -20,7 +20,7 @@ PATCH http://localhost:3000/all_products/4
 Content-Type: application/json
 
 {
-   "price": "43243"
+   "price": "4"
 }
 
 ### delete
