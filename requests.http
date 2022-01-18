@@ -3,8 +3,8 @@ post http://localhost:3000/all_products
 Content-Type: application/json
 
 {
-  "name": "newphoney4t34ophone",
-  "price": "0",
+  "name": "newrttgrgphoney4t34ophone",
+  "price": "5",
   "description": "decent"
 }
 
@@ -20,7 +20,7 @@ PATCH http://localhost:3000/all_products/4
 Content-Type: application/json
 
 {
-   "price": "4"
+   "price": "-1"
 }
 
 ### delete
