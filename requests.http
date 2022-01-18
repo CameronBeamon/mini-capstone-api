@@ -3,8 +3,8 @@ post http://localhost:3000/all_products
 Content-Type: application/json
 
 {
-  "name": "Samsung",
-  "price": "1232314",
+  "name": "newphoney4t34ophone",
+  "price": "0",
   "description": "decent"
 }
 

@@ -15,8 +15,11 @@ class ProductsController < ApplicationController
       price: params["price"],
       description: params["description"],
     )
-    new_product.save
-    render json: new_product.as_json
+    if new_product.save
+      render json: new_product.as_json
+    else
+      render json: { message: new_product.errors.full_messages, status: :unprocessable_entity }
+    end
   end
 
   def update
@@ -25,8 +28,11 @@ class ProductsController < ApplicationController
     product.description = params[:description] || product.description
     product.price = params[:price] || product.price
     product.image_url = params[:image_url] || product.image_url
-    product.save
-    render json: product.as_json
+    if product.save
+      render json: product.as_json
+    else
+      render json: { message: product.error.full_messages, status: :unprocessable_entity }
+    end
   end
 
   def destroy
