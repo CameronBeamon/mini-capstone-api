@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   def show
     product = Product.find_by(id: params[:id])
     pp product
-    render json: product.as_json(methods: [:is_discounted?, :tax, :total])
+    render json: product.as_json(methods: [:is_discounted?, :tax, :total, :images, :supplier])
   end
 
   def index
@@ -27,7 +27,6 @@ class ProductsController < ApplicationController
     product.name = params[:name] || product.name
     product.description = params[:description] || product.description
     product.price = params[:price] || product.price
-    product.image_url = params[:image_url] || product.image_url
     if product.save
       render json: product.as_json
     else
