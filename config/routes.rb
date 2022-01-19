@@ -5,6 +5,11 @@ Rails.application.routes.draw do
   get "/all_products/:id" => "products#show"
   patch "/all_products/:id" => "products#update"
   delete "/all_products/:id" => "products#destroy"
+  get "/all_supplier" => "suppliers#index"
+  post "/all_suuppliers/" => "suppliers#create"
+  get "/all_suuppliers/:id" => "suppliers#show"
+  patch "/all_suuppliers/:id" => "suppliers#update"
+  delete "/all_suuppliers/:id" => "suppliers#destroy"
   # get "/first_product", controller: "products", action: "show_first"
   # get "/third_product", controller: "products", action: "show_third"
   # Defines the root path route ("/")
