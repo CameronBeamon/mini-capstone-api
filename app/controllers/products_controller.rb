@@ -14,9 +14,14 @@ class ProductsController < ApplicationController
       name: params["name"],
       price: params["price"],
       description: params["description"],
+      supplier_id: params["supplier_id"],
     )
     if new_product.save
-      render json: new_product.as_json
+      Image.create(
+        url: params["image_url"],
+        product_id: new_product.id,
+      )
+      render json: new_product.as_json(methods: [:is_discounted?, :tax, :total, :images, :supplier])
     else
       render json: { message: new_product.errors.full_messages, status: :unprocessable_entity }
     end

@@ -3,9 +3,8 @@ post http://localhost:3000/all_products
 Content-Type: application/json
 
 {
-  "name": "newrttgrgphoney4t34ophone",
-  "price": "5",
-  "description": "decent"
+  "image_url": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-13-pro-max-graphite-select?",
+  "product_id": "1"
 }
 
 ### index
