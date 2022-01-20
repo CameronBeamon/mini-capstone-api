@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  post "/sessions" => "sessions#create"
   post "/users" => "users#create"
   get "/all_products" => "products#index"
   post "/all_products" => "products#create"
