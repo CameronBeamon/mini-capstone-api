@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
   end
 
   def index
+    pp current_user
     render json: Product.all
   end
 

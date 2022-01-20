@@ -9,6 +9,7 @@ Content-Type: application/json
 
 ### index
 GET  http://localhost:3000/all_products
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDI3Mjk2MzJ9.P3DkDw3JQs4ExUD-GuKk5np7DoxnvLdOv3H3txJf-xE
 
 
 ### show
@@ -43,4 +44,15 @@ Content-Type: application/json
 {
   "email": "test@test.com",
   "password": "password"
+}
+
+### 
+POST http://localhost:3000/photos
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjozLCJleHAiOjE2Mjk5OTI4NjR9.G2ExsrDYn3oE0vJkvm4T6Po2GbNpH5cqTEaVPVuK_MA
+Content-Type: application/json
+
+{
+  "name": "Test name",
+  "width": 640,
+  "height": 480
 }
