@@ -1,3 +1,5 @@
+@jwt = 
+
 ### create 
 post http://localhost:3000/all_products
 Content-Type: application/json
@@ -9,7 +11,6 @@ Content-Type: application/json
 
 ### index
 GET  http://localhost:3000/all_products
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDI3Mjk2MzJ9.P3DkDw3JQs4ExUD-GuKk5np7DoxnvLdOv3H3txJf-xE
 
 
 ### show
