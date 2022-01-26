@@ -1,18 +1,34 @@
 class OrdersController < ApplicationController
-  before_action :authenticate_admin, except: [:index, :show]
+  before_action :authenticate_user
 
   def create
-    if current_user
-      product = Product.find_by(id: params[:product_id])
-      new_order = Order.new(
-        user_id: current_user.id,
-        product_id: product.id,
-        quantity: params[:quantity],
-        subtotal: product.price,
-        tax: product.tax,
-        total: product.total,
-      )
-      new_order.save
+    carted_products = CartedProduct.where(user_id: current_user.id, status: "carted")
+    calculated_subtotal = 0
+    calculated_tax = 0
+    calculated_quantity = 0
+    i = 0
+    while i < carted_products.length
+      calculated_subtotal += Product.find_by(id: carted_products[i].product_id).price * carted_products[i].quantity
+      calculated_tax += Product.find_by(id: carted_products[i].product_id).tax
+      calculated_quantity += carted_products[i].quantity
+      carted_products[i].status = "purchased"
+      carted_products[i].save
+      i = i + 1
+    end
+    new_order = Order.new(
+      user_id: current_user.id,
+      subtotal: calculated_subtotal,
+      tax: calculated_tax,
+      total: calculated_tax + calculated_subtotal,
+      quantity: calculated_quantity,
+    )
+    if new_order.save
+      i = 0
+      while i < carted_products.length
+        carted_products[i].order_id = new_order.id
+        carted_products[i].save
+        i = i + 1
+      end
       render json: new_order
     else
       render json: { message: "didnt work" }

@@ -1,4 +1,4 @@
-@jwt = 
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDMyNDkzNDN9.bL5nJl6yRDc5HkQpCqMQ2bFiLbQsU0NHyc49tF85cJc
 
 ### create 
 post http://localhost:3000/all_products
@@ -32,8 +32,8 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-  "name": "thirdTest name",
-  "email": "thirdtest@test.com",
+  "name": "SecondTest name",
+  "email": "secondt@test.com",
   "password": "password",
   "password_confirmation": "password"
 }
@@ -43,14 +43,26 @@ POST http://localhost:3000/sessions
 Content-Type: application/json
 
 {
-  "email": "test@test.com",
+  "email": "first@test.com",
   "password": "password"
 }
 
 
 ### create (orders)
 POST http://localhost:3000/orders
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDI4MTUxNzd9.d69vVZkslHHH9XiYo_cqTVEZczU_Rpfqhmmec1ydKdU
+Authorization: Bearer {{jwt}}
+
+### show (orders)
+get http://localhost:3000/orders/2
+Authorization: Bearer {{jwt}}
+
+### index (orders)
+get http://localhost:3000/orders
+Authorization: Bearer {{jwt}}
+
+### create (carted_product)
+POST http://localhost:3000/carted_products
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
@@ -58,10 +70,6 @@ Content-Type: application/json
   "quantity": 3
 }
 
-### show (orders)
-get http://localhost:3000/orders/2
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDI4MTUxNzd9.d69vVZkslHHH9XiYo_cqTVEZczU_Rpfqhmmec1ydKdU
-
-### index (orders)
-get http://localhost:3000/orders
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDI4MTUxNzd9.d69vVZkslHHH9XiYo_cqTVEZczU_Rpfqhmmec1ydKdU
+### index (carted_product)
+get http://localhost:3000/carted_products
+Authorization: Bearer {{jwt}}
