@@ -16,17 +16,4 @@ product = Product.create(name: "Blackberry", price: 20, description: "Absent", s
 image = Image.create(product_id: 1, url: "https://ih1.redbubble.net/image.1849445138.4826/st,small,507x507-pad,600x600,f8f8f8.jpg")
 image = Image.create(product_id: 1, url: "https://images.idgesg.net/images/article/2020/08/android-awkward-timing-100855433-large.jpg?auto=webp&quality=85,70")
 image = Image.create(product_id: 1, url: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-13-pro-max-graphite-select?wid=470&hei=556&fmt=jpeg&qlt=95&.v=1631652956000")
-
-category = Category.create(name: "Good")
-category = Category.create(name: "Bad")
-category = Category.create(name: "Ugly")
-
-category_product = CategoryProduct.create(category_id: 2, product_id: 1)
-category_product = CategoryProduct.create(category_id: 3, product_id: 1)
-category_product = CategoryProduct.create(category_id: 3, product_id: 3)
-category_product = CategoryProduct.create(category_id: 3, product_id: 2)
-category_product = CategoryProduct.create(category_id: 1, product_id: 1)
-category_product = CategoryProduct.create(category_id: 2, product_id: 3)
-category_product = CategoryProduct.create(category_id: 1, product_id: 2)
-
 puts "Done!"
