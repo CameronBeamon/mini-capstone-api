@@ -6,7 +6,10 @@ Content-Type: application/json
 
 {
   "image_url": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-13-pro-max-graphite-select?",
-  "product_id": "1"
+  "name": "haha",
+  "price": 233,
+  "description": "new",
+  "supplie_id": 1
 }
 
 ### index
@@ -66,7 +69,7 @@ Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
-  "product_id": 2,
+  "product_id": 1,
   "quantity": 7
 }
 

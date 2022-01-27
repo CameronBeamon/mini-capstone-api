@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
       price: params["price"],
       description: params["description"],
       supplier_id: params["supplier_id"],
-    )
+    ).includes(:image, :supplier)
     if new_product.save
       Image.create(
         url: params["image_url"],

@@ -14,7 +14,7 @@ class OrdersController < ApplicationController
         carted_product.save
       end
       new_order.update_totals
-      render json: new_order
+      render json: new_order, include: "carted_products.product"
     else
       render json: { message: "didnt work" }
     end
@@ -32,7 +32,7 @@ class OrdersController < ApplicationController
   def index
     if current_user
       orders = Order.where(user_id: current_user.id)
-      render json: orders
+      render json: orders, include: "carted_products.product"
     end
   end
 end
