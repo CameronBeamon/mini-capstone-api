@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDMyNDkzNDN9.bL5nJl6yRDc5HkQpCqMQ2bFiLbQsU0NHyc49tF85cJc
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDMzMzU5MjZ9.7h-AJUOPseOXPEtvtfIQLAQ5WIKO7f6aaB561cUDH1k
 
 ### create 
 post http://localhost:3000/all_products
@@ -67,9 +67,13 @@ Content-Type: application/json
 
 {
   "product_id": 2,
-  "quantity": 3
+  "quantity": 7
 }
 
 ### index (carted_product)
 get http://localhost:3000/carted_products
+Authorization: Bearer {{jwt}}
+
+### delete (carted_product)
+DELETE http://localhost:3000/carted_products/4
 Authorization: Bearer {{jwt}}
