@@ -9,10 +9,10 @@ Rails.application.routes.draw do
   delete "/all_products/:id" => "products#destroy"
 
   get "/all_suppliers" => "suppliers#index"
-  post "/all_suuppliers/" => "suppliers#create"
-  get "/all_suuppliers/:id" => "suppliers#show"
-  patch "/all_suuppliers/:id" => "suppliers#update"
-  delete "/all_suuppliers/:id" => "suppliers#destroy"
+  post "/all_suppliers/" => "suppliers#create"
+  get "/all_suppliers/:id" => "suppliers#show"
+  patch "/all_suppliers/:id" => "suppliers#update"
+  delete "/all_suppliers/:id" => "suppliers#destroy"
 
   get "/orders" => "orders#index"
   post "/orders" => "orders#create"
